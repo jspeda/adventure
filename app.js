@@ -203,6 +203,14 @@ const moveEverything = () => {
   cameraFollow();
 }
 
-const colorRect (topLeftX, topLeftY, boxWidth, boxHeight, fillColor) {
-  
+const colorRect = (topLeftX, topLeftY, boxWidth, boxHeight, fillColor) => {
+  canvasContext.fillStyle = fillColor;
+  canvasContext.fillRect(topLeftX, topLeftY, boxWidth, boxHeight);
+}
+
+const colorCircle = (centerX, centerY, radius, fillColor) => {
+  canvasContext.fillStyle = fillColor;
+  canvasContext.beginPath();
+  canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true);
+  canvasContext.fill();
 }
